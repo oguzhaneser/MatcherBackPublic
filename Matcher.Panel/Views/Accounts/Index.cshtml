@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+@model AccountVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Matcher Panel Login</title>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <style>
+        body {
+            height: 100vh;
+        }
+    </style>
+    <div class="container justify-content-center h-100 d-flex align-items-center">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4 class="text-center">Giriş Yap</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Login">
+                    <input type="hidden" value="@ViewBag.ReturnUrl" asp-for="ReturnUrl" />
+                    <div class="form-floating mb-3 mt-3">
+                        <input class="form-control" placeholder="Kullanıcı adınızı giriniz." asp-for="Username">
+                        <label for="Username">Kullanıcı Adı</label>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <input class="form-control" placeholder="Şifrenizi giriniz." asp-for="Password">
+                        <label for="Password">Şifre</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Giriş</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
